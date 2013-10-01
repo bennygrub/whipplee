@@ -1,5 +1,7 @@
-%p#notice= notice
-
+- if @post.image.file.exists? 
+  %p 
+    = image_tag @post.image
+    = @post.image.file.exists?
 %p
   %b Title:
   = @post.title

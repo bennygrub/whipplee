@@ -1,3 +1,13 @@
+- @posts.each do |post|
+  %p= post.title
+  %p= post.video
+  %p= post.content
+  %p= link_to 'Show', post
+  %br
+
+= link_to 'New Post', new_post_path
+
+
 %h1 Listing posts
 
 %table

@@ -1,4 +1,8 @@
 Whipplee::Application.routes.draw do
+  get "users/show"
+
+  get "users/index"
+
   resources :posts
 
 
@@ -9,6 +13,7 @@ Whipplee::Application.routes.draw do
   get "pages/contact"
 
   devise_for :users
+  resources :users, :only => [:show, :index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

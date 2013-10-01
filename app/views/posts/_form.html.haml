@@ -5,6 +5,9 @@
     = f.input :title
     = f.input :video
     = f.input :content
+    = image_tag(@post.image_url) if @post.image?
+    = f.file_field :image
+    = f.hidden_field :image_cache
 
   .form-actions
     = f.button :submit
