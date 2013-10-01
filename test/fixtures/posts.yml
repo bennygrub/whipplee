@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  video: MyString
+  content: MyString
+  publish: false
+
+two:
+  title: MyString
+  video: MyString
+  content: MyString
+  publish: false

@@ -1,4 +1,7 @@
 Whipplee::Application.routes.draw do
+  resources :posts
+
+
   get "pages/home"
 
   get "pages/about"
