@@ -11,7 +11,7 @@ end
 
 gem "haml-rails"
 gem 'devise'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'simple_form'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"

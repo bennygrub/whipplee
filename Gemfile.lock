@@ -146,7 +146,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
+  bootstrap-sass (~> 2.3.2.1)
   carrierwave
   coffee-rails (~> 3.2.1)
   devise
