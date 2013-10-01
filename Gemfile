@@ -14,6 +14,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 
 group :production do
   gem 'pg', '0.12.2'
