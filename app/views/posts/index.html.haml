@@ -7,29 +7,29 @@
 
 = link_to 'New Post', new_post_path
 
+- if current_user.admin
+  %h1 Listing posts
 
-%h1 Listing posts
-
-%table
-  %tr
-    %th Title
-    %th Video
-    %th Content
-    %th Publish
-    %th
-    %th
-    %th
-
-  - @posts.each do |post|
+  %table
     %tr
-      %td= post.title
-      %td= post.video
-      %td= post.content
-      %td= post.publish
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Title
+      %th Video
+      %th Content
+      %th Publish
+      %th
+      %th
+      %th
 
-%br
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= post.video
+        %td= post.content
+        %td= post.publish
+        %td= link_to 'Show', post
+        %td= link_to 'Edit', edit_post_path(post)
+        %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Post', new_post_path
+  %br
+
+  = link_to 'New Post', new_post_path
