@@ -1,4 +1,8 @@
 Whipplee::Application.routes.draw do
+  get "relationships/create"
+
+  get "relationships/destroy"
+
   get "users/show"
 
   get "users/index"
@@ -13,7 +17,13 @@ Whipplee::Application.routes.draw do
   get "pages/contact"
 
   devise_for :users
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index] do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :relationships, :only => [:create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

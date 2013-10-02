@@ -1,2 +1,9 @@
 %h1= @user.name
 %p= image_tag @user.avatar
+Followers:
+%p.followers= @user.followers.count
+
+Following:
+%p.following= @user.following.count
+
+%p= render 'follow_form' if signed_in?
