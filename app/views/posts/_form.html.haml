@@ -5,6 +5,8 @@
     = f.input :title
     = f.input :video
     = f.input :content
+    = f.input :type_list
+    = f.input :site_list
     = image_tag(@post.image_url) if @post.image?
     = f.file_field :image
     = f.hidden_field :image_cache

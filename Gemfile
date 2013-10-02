@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'aws-sdk'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
+gem 'acts-as-taggable-on'
 
 group :production do
   gem 'pg', '0.12.2'
