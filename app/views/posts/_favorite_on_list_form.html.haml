@@ -1,0 +1,5 @@
+#favorite_form_on_list
+	- if Favorite.where("user_id = ? AND post_id = ?", current_user.id, post.id).count > 0
+		= render 'unfavorite_on_list', post: post
+	- else
+		= render 'favorite_on_list', post: post
