@@ -1,11 +1,5 @@
 Whipplee::Application.routes.draw do
-  get "relationships/create"
 
-  get "relationships/destroy"
-
-  get "users/show"
-
-  get "users/index"
 
   resources :posts
 
@@ -24,6 +18,7 @@ Whipplee::Application.routes.draw do
   end
 
   resources :relationships, :only => [:create, :destroy]
+  resources :favorites, :only => [:create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

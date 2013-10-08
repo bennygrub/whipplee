@@ -1,0 +1,6 @@
+- if current_user
+	#favorite_form
+		- if @favorite_status.count > 0
+			= render 'unfavorite'
+		- else
+			= render 'favorite'

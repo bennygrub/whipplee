@@ -1,0 +1,6 @@
+- unless current_user.nil
+	#favorite_form
+		- if @relationship_status.count > 0
+			= render 'unfavorite'
+		- else
+			= render 'favorite'
