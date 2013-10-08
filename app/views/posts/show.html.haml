@@ -1,4 +1,4 @@
-- if @post.image.file.exists? 
+- if !@post.image.blank? 
   %p 
     = image_tag @post.image
     = @post.image.file.exists?

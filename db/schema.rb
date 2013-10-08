@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007213437) do
+ActiveRecord::Schema.define(:version => 20131008203525) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "user_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20131007213437) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.string   "image"
+    t.text     "vembed"
   end
 
   create_table "relationships", :force => true do |t|

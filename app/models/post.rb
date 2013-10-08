@@ -1,10 +1,11 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :publish, :title, :video, :image, :image_cache, :type_list, :site_list
+  default_scope order('created_at DESC')
+  attr_accessible :content, :publish, :title, :video, :image, :image_cache, :type_list, :site_list, :vembed
   belongs_to :user
   has_many :favorites
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
   mount_uploader :image, ImageUploader
-
+  validates_presence_of :title
   acts_as_taggable
   acts_as_taggable_on :type, :site
 
