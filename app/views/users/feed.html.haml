@@ -1,0 +1,12 @@
+%h1= @user.name
+%h3 My Favorite Posts:
+- @my_favorite_posts.each do |post|
+	= render 'posts/post_list', post: post
+
+%h3 Following:
+- @following.each do |follow|
+	%p= follow.name
+
+%h3 Friends Favorite Posts:
+- @friends_favorite_posts.each do |post|
+	= render 'posts/post_list', post: post

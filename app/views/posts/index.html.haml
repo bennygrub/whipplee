@@ -1,13 +1,5 @@
 - @posts.each do |post|
-  %p= link_to post.title, post
-  %p= post.video
-  %p= post.content
-  %br
-  - if current_user
-    = render "favorite_on_list_form", post: post
-    - if current_user.admin
-      %p= link_to 'Edit', edit_post_path(post)
-      %p= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  = render 'post_list', post: post
 - if current_user
   - if current_user.admin
     = link_to 'New Post', new_post_path

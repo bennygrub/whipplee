@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar, :name, :admin, :avatar_cache
   # attr_accessible :title, :body
+  validates :name, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+
 
   has_many :posts
   has_many :favorites
