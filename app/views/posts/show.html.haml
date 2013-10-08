@@ -1,22 +1,31 @@
+%h2= @post.title
+%p
+  = @post.teaser
+%p
+  = @post.direct
 - if !@post.image.blank? 
   %p 
     = image_tag @post.image
     = @post.image.file.exists?
+
+- if !@post.video.blank? || !@post.vembed.blank?
+  %p= raw @post.vembed
+  %p= @post.video
+
+- if !@post.content.blank?
+  %p= @post.content
+
+
+
 %p
-  %b Title:
-  = @post.title
-%p
-  %b Video:
-  = @post.video
-%p
-  %b Content:
-  = @post.content
-%p
-  %b Publish:
-  = @post.publish
+  = @post.filter_list
+  = @post.type_list
+  = @post.site_list
+  = @post.creator_list
 
 = render "favorite_form"
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+- if current_user 
+  - if current_user.admin
+    = link_to 'Edit', edit_post_path(@post)
+    = link_to 'Back', posts_path

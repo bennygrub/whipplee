@@ -2,15 +2,24 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :title
-    = f.input :video
-    = f.input :vembed
-    = f.input :content
-    = f.input :type_list
-    = f.input :site_list
+    = f.input :title, :placeholder => "Catchy Title for the Feed"
+    = f.input :teaser, :placeholder => "Add a Irresistable Teaser for the Feed"
+    = f.input :direct, :placeholder => "URL directly to blog post (include http)"
+    %h4 Only Add One Type of Content - Video, Content or Image
+    %h5 Video
+    = f.input :video, :placeholder => "The URL of the Actual Video if Youtube or Vimeo"
+    = f.input :vembed, :placeholder => "Video Iframe Embed Code (h=600 w=400)"
+    %h5 Written Content
+    = f.input :content, :placeholder => "Only Use for Written Humor"
+    %h5 Image
     = image_tag(@post.image_url) if @post.image?
     = f.file_field :image
     = f.hidden_field :image_cache
+    %h4 Now, Tag the Content to Make it Useful
+    = f.input :filter_list, :placeholder => "Tags for Filtering (comma seperated)"
+    = f.input :type_list, :placeholder => "General Tags (comma seperated)"
+    = f.input :site_list, :placeholder => "Top Level URL of the Blog the Piece is From"
+    = f.input :creator_list, :placeholder => "The Actual Creators (i.e. Tim and Eric)"
 
   .form-actions
     = f.button :submit

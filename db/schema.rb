@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131008203525) do
+ActiveRecord::Schema.define(:version => 20131008210845) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "user_id"
@@ -23,13 +23,15 @@ ActiveRecord::Schema.define(:version => 20131008203525) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.string   "video"
-    t.string   "content"
+    t.text     "content",    :limit => 255
     t.boolean  "publish"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "user_id"
     t.string   "image"
     t.text     "vembed"
+    t.string   "direct"
+    t.text     "teaser"
   end
 
   create_table "relationships", :force => true do |t|

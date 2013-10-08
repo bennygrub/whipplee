@@ -1,13 +1,13 @@
 class Post < ActiveRecord::Base
   default_scope order('created_at DESC')
-  attr_accessible :content, :publish, :title, :video, :image, :image_cache, :type_list, :site_list, :vembed
+  attr_accessible :content, :publish, :title, :video, :image, :image_cache, :type_list, :site_list, :vembed, :teaser, :direct, :filter_list, :creator_list
   belongs_to :user
   has_many :favorites
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
   mount_uploader :image, ImageUploader
-  validates_presence_of :title
+  validates_presence_of :title, :direct, :teaser
   acts_as_taggable
-  acts_as_taggable_on :type, :site
+  acts_as_taggable_on :type, :site, :filter, :creator
 
   def self.followed_by(user)
     following_ids = %(SELECT followed_id FROM relationships
