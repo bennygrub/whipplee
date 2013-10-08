@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :check_admin, only: [:new, :edit, :update, :destroy, :create]
+  require 'will_paginate/array'
   # GET /posts
   # GET /posts.json
   def index
@@ -8,7 +10,10 @@ class PostsController < ApplicationController
     else
       @posts = Post.tagged_with(params[:filter])
       @filter_type = params[:filter]
-    end 
+    end
+    
+    @posts = @posts.paginate(:page => params[:page], :per_page => 20)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -19,7 +24,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @favorite_status = Favorite.where("user_id = ? AND post_id = ?", current_user.id, @post.id)
+    @favorite_status = Favorite.where("user_id = ? AND post_id = ?", current_user.id, @post.id) if current_user
     
     respond_to do |format|
       format.html # show.html.erb
@@ -98,6 +103,18 @@ class PostsController < ApplicationController
       @posts = @posts.tagged_with(params[:filter])
       @filter_type = params[:filter]
     end
+    @posts = @posts.paginate(:page => params[:page], :per_page => 20)
+  end
+
+  private
+
+  def check_admin
+    if current_user
+      redirect to posts_path, notice: "Only for Admins" unless current_user.admin  
+    else 
+      redirect_to posts_path, notice: "Only for Admins"
+    end
+
   end
 
 end

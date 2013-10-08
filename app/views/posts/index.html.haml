@@ -10,6 +10,7 @@
 %h3= "#{@filter_type.titlecase} Comedy Posts"
 - @posts.each do |post|
   = render 'post_list', post: post
+=will_paginate @posts
 - if current_user
   - if current_user.admin
     = link_to 'New Post', new_post_path

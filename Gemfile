@@ -17,6 +17,7 @@ gem 'aws-sdk'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem 'acts-as-taggable-on'
+gem 'will_paginate', '~> 3.0'
 
 group :production do
   gem 'pg', '0.12.2'
