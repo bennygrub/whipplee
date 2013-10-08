@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem 'acts-as-taggable-on'
 gem 'will_paginate', '~> 3.0'
+gem "friendly_id", "~> 4.0.10"
 
 group :production do
   gem 'pg', '0.12.2'

@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   validates :name, format: { with: /\A[a-zA-Z0-9]+\Z/ }
 
-
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   has_many :posts
   has_many :favorites
   has_many :relationships, :foreign_key => "follower_id", :dependent => :destroy
