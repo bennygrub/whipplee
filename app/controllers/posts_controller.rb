@@ -2,8 +2,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-
+    if params[:filter].nil?
+      @posts = Post.all
+      @filter_type = "Latest"
+    else
+      @posts = Post.tagged_with(params[:filter])
+      @filter_type = params[:filter]
+    end 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -81,4 +86,18 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def popular
+    #@posts = Post.all
+    @posts = Post.joins("LEFT OUTER JOIN Favorites ON favorites.post_id = posts.id 
+                     AND posts.created_at >= DATETIME('now', '-7 days')")
+                    .group("posts.id").order("COUNT(favorites.id) DESC")
+    @filter_type = "Comedy"
+
+    if params[:filter]
+      @posts = @posts.tagged_with(params[:filter])
+      @filter_type = params[:filter]
+    end
+  end
+
 end

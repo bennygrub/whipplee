@@ -1,0 +1,9 @@
+
+
+%h1 You Are Following
+- @following.each do |following|
+	%p= following.name
+
+%h1 You Are Followed By
+- @followers.each do |follower|
+	%p= follower.name

@@ -1,3 +1,13 @@
+%h5 Filters
+= link_to "Video", posts_path(:filter => "Video")
+= link_to "Audio", posts_path(:filter => "Audio")
+= link_to "Image", posts_path(:filter => "Image")
+= link_to "Written", posts_path(:filter => "Written")
+= link_to "Potty", posts_path(:filter => "Potty")
+= link_to "Political", posts_path(:filter => "Political")
+= link_to "Pop Culture", posts_path(:filter => "Pop Culture")
+
+%h3= "#{@filter_type.titlecase} Comedy Posts"
 - @posts.each do |post|
   = render 'post_list', post: post
 - if current_user

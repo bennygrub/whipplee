@@ -1,7 +1,11 @@
 Whipplee::Application.routes.draw do
 
 
-  resources :posts
+  resources :posts do
+    collection do
+      get 'popular'
+    end
+  end
 
 
   get "pages/home"

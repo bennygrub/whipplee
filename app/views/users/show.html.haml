@@ -8,5 +8,8 @@ Following:
 
 %p= render 'follow_form' if signed_in?
 
+= link_to 'Your friends favorites', feed_user_path(@user)
+
+%h3 My Favorite Posts:
 - @my_favorite_posts.each do |post|
 	= render 'posts/post_list', post: post

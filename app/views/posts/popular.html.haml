@@ -1,0 +1,15 @@
+%h5 Filters
+= link_to "Video", popular_posts_path(:filter => "Video")
+= link_to "Audio", popular_posts_path(:filter => "Audio")
+= link_to "Image", popular_posts_path(:filter => "Image")
+= link_to "Written", popular_posts_path(:filter => "Written")
+= link_to "Potty", popular_posts_path(:filter => "Potty")
+= link_to "Political", popular_posts_path(:filter => "Political")
+= link_to "Pop Culture", popular_posts_path(:filter => "Pop Culture")
+
+%h3= "Popular #{@filter_type} Posts"
+- @posts.each do |post|
+  = render 'post_list', post: post
+- if current_user
+  - if current_user.admin
+    = link_to 'New Post', new_post_path
