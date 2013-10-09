@@ -1,2 +1,3 @@
 $("#favorite_form").html("<%= escape_javascript(render('posts/unfavorite')) %>");
 $("#favorite_form_on_list[data-post-id='<%=@post.id%>']").html("<%= escape_javascript(render('posts/unfavorite_on_list', :post => @post)) %>");
+
