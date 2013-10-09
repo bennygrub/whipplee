@@ -1,6 +1,8 @@
 Whipplee::Application.routes.draw do
 
 
+  get "registrations/update"
+
   resources :posts do
     collection do
       get 'popular'
@@ -14,12 +16,13 @@ Whipplee::Application.routes.draw do
 
   get "pages/contact"
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   resources :users, :only => [:show, :index] do
     member do
       get :following, :followers, :feed
     end
   end
+
 
   resources :relationships, :only => [:create, :destroy]
   resources :favorites, :only => [:create, :destroy]
