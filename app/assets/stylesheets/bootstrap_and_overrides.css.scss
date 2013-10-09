@@ -3,5 +3,6 @@ body { padding-top: 60px; }
 @import "bootstrap-responsive";
 
 ul.nav li.dropdown:hover > ul.dropdown-menu {
-    display: block;    
+    display: block;
+    margin: 0;
 }

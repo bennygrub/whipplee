@@ -1,5 +1,5 @@
-%h1= @user.name
-%p= image_tag @user.avatar
+%h4= @user.name
+%p= image_tag @user.avatar.thumb
 Followers:
 %p.followers= @user.followers.count
 
@@ -8,8 +8,6 @@ Following:
 
 %p= render 'follow_form' if signed_in?
 
-= link_to 'Your friends favorites', feed_user_path(@user)
-
-%h3 My Favorite Posts:
+%h3= "#{@user.name} Favorites:"
 - @my_favorite_posts.each do |post|
 	= render 'posts/post_list', post: post
