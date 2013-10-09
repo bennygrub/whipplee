@@ -1,13 +1,20 @@
-%h4= @user.name
-%p= image_tag @user.avatar.thumb
-Followers:
-%p.followers= @user.followers.count
-
-Following:
-%p.following= @user.following.count
-
-%p= render 'follow_form' if signed_in?
-
-%h3= "#{@user.name} Favorites:"
+#topbox
+	.userinfo.left
+		.useravatar.left= image_tag @user.avatar.thumb
+		%h4= @user.name
+		%p= "Joined #{@user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y")}"
+	.userextras.left
+		.infobox.left
+			Favorites
+			%p= @my_favorite_posts.count
+		.infobox.left
+			Followers
+			%p.followers= @user.followers.count
+		.infobox.left
+			Following
+			%p.following= @user.following.count
+		= render 'follow_form' if signed_in?
+	.clear
+%h3= "#{@user.name} Favorites"
 - @my_favorite_posts.each do |post|
 	= render 'posts/post_list', post: post

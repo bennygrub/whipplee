@@ -1,3 +1,47 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grey: #dcddd8;
+
+.userinfo {
+	width:250px;
+}
+
+.left {
+	float:left;
+}
+
+.clear {
+	clear:both;
+}
+
+.infobox {
+	height: 35px;
+	text-align: center;
+	padding: 10px 0px;
+	font-size: 12px;
+	border: 1px solid #999999;
+	margin-right: 5px;
+	min-width: 15%;
+}
+
+.userextras {
+	width:60%;
+}
+
+.useravatar {
+	margin: 0 5px 0 0;
+}
+
+.userinfo p{
+	font-size:10px;
+}
+
+.listitemborder {
+	border-bottom: $grey solid 1px;
+}
+
+.userlistarea {
+	height:90px;
+}

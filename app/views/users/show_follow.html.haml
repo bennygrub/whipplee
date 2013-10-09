@@ -1,9 +1,14 @@
-
-
-%h1 You Are Following
-- @following.each do |following|
-	%p= following.name
-
-%h1 You Are Followed By
-- @followers.each do |follower|
-	%p= follower.name
+- if @title == "Following"
+	%h1 You Are Following
+	.listitemborder
+	- @following.each do |following|
+		.userlistarea.listitemborder
+			.left= image_tag following.avatar.thumb
+			%h4= following.name
+- elsif @title == "Followers"
+	%h1 You Are Followed By
+	.listitemborder
+	- @followers.each do |follower|
+		.userlistarea.listitemborder
+			.left= image_tag follower.avatar.thumb
+			%h4= follower.name
