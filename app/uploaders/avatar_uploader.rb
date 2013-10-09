@@ -15,7 +15,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-
+  
+  def default_url
+    #"/images/fallback/" + [version_name, "avatar_default.png"].compact.join('_')
+    ActionController::Base.helpers.asset_path("fallback/" + [version_name, "avatar_default.png"].compact.join('_'))
+  end
+  
   process :resize_to_fit => [800, 800]
 
   version :thumb do
@@ -23,7 +28,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   version :mini do
-    process :resize_to_fill => [25,25]
+    process :resize_to_fill => [20,20]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

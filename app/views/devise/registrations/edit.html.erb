@@ -17,9 +17,10 @@
   </div>
   <p>
     <label>My Avatar</label>
-    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+    <%= image_tag(@user.avatar.thumb) if @user.avatar? %>
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>
+    </br><%= f.check_box :remove_avatar %> Check for Default Profile Image
   </p>
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
