@@ -1,6 +1,9 @@
 - @post = post
 #favorite_form_on_list{:data => {:post_id => post.id}}
-	- if Favorite.where("user_id = ? AND post_id = ?", current_user.id, post.id).count > 0
-		= render 'posts/unfavorite_on_list', post: post
+	- if current_user
+		- if Favorite.where("user_id = ? AND post_id = ?", current_user.id, post.id).count > 0
+			= render 'posts/unfavorite_on_list', post: post
+		- else
+			= render 'posts/favorite_on_list', post: post
 	- else
-		= render 'posts/favorite_on_list', post: post
+		%p Non-logged in favorite button
