@@ -12,6 +12,22 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     margin: 0;
 }
 
+a, a:visited {
+	color:#475F77;
+	//-webkit-transition: color 1s;
+	//-moz-transition: color 1s;
+	//-o-transition: color 1s;
+	//transition: color 1s;
+}
+
+a:hover {
+	color:#D74B4B;
+	text-decoration:none;
+	//-webkit-transition: color 1s;
+	//-moz-transition: color 1s;
+	//-o-transition: color 1s;
+	//transition: color 1s;
+}
 
 .navbar-inner {
 	min-height: 40px;
