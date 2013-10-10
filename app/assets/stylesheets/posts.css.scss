@@ -1,3 +1,32 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$grey: #dcddd8;
+
+.post_media {
+	display:none;
+}
+
+.listitemborder {
+	border-bottom: $grey solid 1px;
+}
+
+.post_metadata{
+	border-bottom: rgb(233, 233, 233) dotted 1px;
+	margin: 0 0 10px 0;
+	background-color:#F3F3F3;
+	padding: 5px 10px;
+}
+
+.left {
+	float:left;
+}
+
+.basic_data {
+	width:80%;
+}
+
+.social_data {
+	width:15%;
+}

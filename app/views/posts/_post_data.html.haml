@@ -1,0 +1,14 @@
+.post_metadata{class: post.id }
+	.basic_data.left
+		%h4= link_to post.title, post
+		%p
+			By 
+			%b=post.creator_list
+		%p= post.teaser
+	- if current_user
+		- if current_user.admin
+			= link_to 'Edit', edit_post_path(post)
+			= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+	.social_data.left
+		= render "posts/favorite_on_list_form", post: post
+	.clear
