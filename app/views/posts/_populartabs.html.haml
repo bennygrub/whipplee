@@ -1,0 +1,33 @@
+%ul.nav.nav-tabs
+	- if params[:filter].nil? 
+		%li.active
+			= link_to 'All', popular_posts_path
+	- else
+		%li
+			= link_to 'All', popular_posts_path
+	- if params[:filter] == "video"
+		%li.active
+			= link_to "Video", popular_posts_path(:filter => "video")
+	- else
+		%li	
+			= link_to "Video", popular_posts_path(:filter => "video")
+	
+	- if params[:filter] == "image"
+		%li.active
+			= link_to "Image", popular_posts_path(:filter => "image")
+	- else
+		%li	
+			= link_to "Image", popular_posts_path(:filter => "image")
+
+	- if params[:filter] == "written"
+		%li.active
+			= link_to "Written", popular_posts_path(:filter => "written")
+	- else
+		%li	
+			= link_to "Written", popular_posts_path(:filter => "written")
+	- if params[:filter] == "audio"
+		%li.active
+			= link_to "Audio", popular_posts_path(:filter => "audio")
+	- else
+		%li	
+			= link_to "Audio", popular_posts_path(:filter => "audio")

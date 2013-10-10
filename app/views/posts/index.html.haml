@@ -1,19 +1,15 @@
-%h5 Filters
-= link_to "Video", posts_path(:filter => "Video")
-= link_to "Audio", posts_path(:filter => "Audio")
-= link_to "Image", posts_path(:filter => "Image")
-= link_to "Written", posts_path(:filter => "Written")
-= link_to "Potty", posts_path(:filter => "Potty")
-= link_to "Political", posts_path(:filter => "Political")
-= link_to "Pop Culture", posts_path(:filter => "Pop Culture")
+%h3= "Lastest #{@filter_type.titlecase} Comedy Posts"
 
-%h3= "#{@filter_type.titlecase} Comedy Posts"
+= render "tabselection"
+	
+		
+
 - @posts.each do |post|
-  = render 'post_list', post: post
+	= render 'post_list', post: post
 =will_paginate @posts
 - if current_user
-  - if current_user.admin
-    = link_to 'New Post', new_post_path
+	- if current_user.admin
+		= link_to 'New Post', new_post_path
 
 
 

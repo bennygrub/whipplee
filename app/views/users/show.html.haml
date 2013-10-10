@@ -5,13 +5,13 @@
 		%p= "Joined #{@user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y")}"
 	.userextras.left
 		.infobox.left
-			Favorites
+			.bold Favorites
 			%p= @my_favorite_posts.count
 		.infobox.left
-			Followers
+			.bold Followers
 			%p.followers= @user.followers.count
 		.infobox.left
-			Following
+			.bold Following
 			%p.following= @user.following.count
 		= render 'follow_form' if signed_in?
 	.clear

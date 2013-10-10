@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     if params[:filter].nil?
       @posts = Post.all
-      @filter_type = "Latest"
+      @filter_type = ""
     else
       @posts = Post.tagged_with(params[:filter])
       @filter_type = params[:filter]
