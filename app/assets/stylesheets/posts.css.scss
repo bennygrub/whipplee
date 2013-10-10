@@ -8,14 +8,14 @@ $grey: #dcddd8;
 	display:none;
 }
 
-.listitemborder {
-	border-bottom: $grey solid 1px;
+.listitemborderposts {
+	border-bottom: #354B5E solid 1px;
 }
 
 .post_metadata{
-	border-bottom: rgb(233, 233, 233) dotted 1px;
+	border-bottom: $grey dotted 1px;
 	margin: 0 0 10px 0;
-	background-color:#F3F3F3;
+	background-color:#FCFCFC;
 	padding: 5px 10px;
 }
 

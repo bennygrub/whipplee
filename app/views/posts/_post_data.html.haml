@@ -12,3 +12,6 @@
 	.social_data.left
 		= render "posts/favorite_on_list_form", post: post
 	.clear
+	%p
+	%button.show_hide{data: {post: post.id} }
+		Show/Hide >>

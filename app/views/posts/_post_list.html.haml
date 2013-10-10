@@ -1,7 +1,4 @@
 =render "post_data", post: post
-%p
-	%a.show_hide{data: {post: post.id} }
-		Show/Hide >>
 - if !post.video.blank? || !post.vembed.blank?
 	= render 'posts/video', post: post
 - elsif !post.content.blank?
@@ -9,4 +6,4 @@
 - elsif !post.image.blank?
 	= render 'posts/image', post: post
 %br
-.listitemborder
+.listitemborderposts
