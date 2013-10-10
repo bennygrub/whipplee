@@ -1,0 +1,19 @@
+.userinfo.left
+	.useravatar.left= image_tag @user.avatar.thumb
+	%h4= @user.name
+	%p= "Joined #{@user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y")}"
+.userextras.left
+	= link_to user_path(@user) do 
+		.infobox.left
+			.bold Favorites
+			%p= @my_favorite_posts.count
+	= link_to followers_user_path(@user) do
+		.infobox.left
+			.bold Followers
+			%p.followers= @user.followers.count
+	= link_to following_user_path(@user) do
+		.infobox.left
+			.bold Following
+			%p.following= @user.following.count
+	= render 'follow_form' if signed_in?
+.clear
