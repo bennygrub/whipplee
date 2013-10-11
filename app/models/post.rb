@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
-  default_scope order('created_at DESC')
-  attr_accessible :content, :publish, :title, :video, :image, :image_cache, :type_list, :site_list, :vembed, :teaser, :direct, :filter_list, :creator_list
+  #default_scope order('created_at DESC')
+  attr_accessible :content, :publish, :title, :video, :image, :image_cache, :type_list, :site_list, :vembed, :teaser, :direct, :filter_list, :creator_list, :favorite
   belongs_to :user
   has_many :favorites
   scope :from_users_followed_by, lambda { |user| followed_by(user) }

@@ -5,6 +5,7 @@ class FavoritesController < ApplicationController
 
     respond_to do |format|
       if @favorite.save
+        @post.update_column(:favorite, @post.favorite + 1)
         format.html { redirect_to posts_path, notice: "You Favorited: #{@post.title}" }
         format.js
       end
@@ -14,6 +15,7 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite = Favorite.find(params[:id])
     @post = Post.find(@favorite.post_id)
+    @post.update_column(:favorite, @post.favorite - 1)
     @favorite.destroy
 
     respond_to do |format|

@@ -5,10 +5,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:filter].nil?
-      @posts = Post.all
+      @posts = Post.find(:all, :order => 'created_at DESC')
       @filter_type = ""
     else
-      @posts = Post.tagged_with(params[:filter])
+      @posts = Post.tagged_with(params[:filter]).order('created_at DESC')
       @filter_type = params[:filter]
     end
     
@@ -93,10 +93,9 @@ class PostsController < ApplicationController
   end
 
   def popular
-    #@posts = Post.all
-    @posts = Post.joins("LEFT OUTER JOIN Favorites ON favorites.post_id = posts.id 
-                     AND posts.created_at >= DATETIME('now', '-7 days')")
-                    .group("posts.id").order("COUNT(favorites.id) DESC")
+    @posts = Post.where("created_at >= ?", 2.weeks.ago).order("favorite DESC")
+    #@posts = @posts.sort_by()
+    #@posts = Post.joins("LEFT OUTER JOIN Favorites ON favorites.post_id = posts.id AND posts.created_at >= DATETIME('now','-14 days')").group("posts.id").order("COUNT(favorites.id) DESC")
     @filter_type = "Comedy"
 
     if params[:filter]
@@ -110,7 +109,7 @@ class PostsController < ApplicationController
 
   def check_admin
     if current_user
-      redirect to posts_path, notice: "Only for Admins" unless current_user.admin  
+      redirect_to posts_path, notice: "Only for Admins" unless current_user.admin  
     else 
       redirect_to posts_path, notice: "Only for Admins"
     end
