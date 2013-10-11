@@ -113,3 +113,24 @@ $grey: #dcddd8;
 .unfollow input[type="submit"]:hover {
 	background:url('/assets/subtract_hover.png') no-repeat;
 }
+
+.show_hide_wrapper {
+	width: 20%;
+	margin: auto;
+}
+
+.show_hide {
+	margin:auto;
+}
+
+button.show_hide {
+	border:1px solid $grey;
+	margin:0;
+	background:none;
+	font-size: 11px;
+	padding: 2px 5px;
+}
+
+button.show_hide:hover {
+	background:$grey;
+}

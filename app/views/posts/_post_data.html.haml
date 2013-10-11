@@ -15,6 +15,13 @@
 		= render "posts/favorite_on_list_form", post: post
 	.clear
 	%p
-	%button.right.show_hide{data: {post: post.id} }
-		Show/Hide >>
+	.show_hide_wrapper
+		%button.rounded.show_hide{data: {post: post.id} }
+			- if !post.video.blank? || !post.vembed.blank?
+				Watch Video
+			- elsif !post.content.blank?
+				Read More
+			- elsif !post.image.blank?
+				View Image
+			
 	.clear
