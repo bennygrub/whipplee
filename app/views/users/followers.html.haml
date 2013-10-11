@@ -1,0 +1,7 @@
+%h1 You Are Followed By
+.listitemborder
+	- @followers.each do |follower|
+		.userlistarea.listitemborder
+			- @my_favorite_posts = follower.favorites.map {|favorite| Post.find(favorite.post_id)}
+			- @user = follower
+			= render "userbar"
