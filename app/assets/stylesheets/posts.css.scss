@@ -81,3 +81,35 @@ $grey: #dcddd8;
 	margin: 10px 20px 10px 0;
 	float:right;
 }
+.follow, .unfollow {
+	padding: 5px 20px;
+	float: left;
+}
+
+.follow input[type="submit"] {
+	background:url('/assets/add_blue.png') no-repeat;
+	width: 25px;
+	height: 25px;
+	padding:0px;
+	border:none;
+	margin:0;
+	float:right;
+}
+
+.follow input[type="submit"]:hover {
+	background:url('/assets/add_hover.png') no-repeat;
+}
+
+.unfollow input[type="submit"] {
+	background:url('/assets/subtract_blue.png') no-repeat;
+	width: 25px;
+	height: 25px;
+	padding:0px;
+	border:none;
+	margin:0;
+	float:right;
+}
+
+.unfollow input[type="submit"]:hover {
+	background:url('/assets/subtract_hover.png') no-repeat;
+}
