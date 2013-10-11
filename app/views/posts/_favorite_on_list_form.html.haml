@@ -6,4 +6,6 @@
 		- else
 			= render 'posts/favorite_on_list', post: post
 	- else
-		%p Non-logged in favorite button
+		.heart_out= link_to image_tag("heart_grey.png"), new_user_registration_path
+	.clear
+= render "posts/addthis"

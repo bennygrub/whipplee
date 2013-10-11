@@ -2,7 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 $grey: #dcddd8;
+
+.rounded {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
 
 .post_media {
 	display:none;
@@ -39,9 +47,6 @@ $grey: #dcddd8;
 	height:50px;
 	background: $grey;
 	margin: 5px 10px 0 0;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
 	overflow:hidden;
 	border: 1px #BBBBBB solid;
 }
@@ -50,8 +55,9 @@ $grey: #dcddd8;
 	background:url('/assets/heart_grey.png') no-repeat;
 	width: 23px;
 	padding:0px;
-	margin:0px;
 	border:none;
+	margin: 10px 20px 10px 0;
+	float:right;
 }
 
 .heart input[type="submit"]:hover {
@@ -62,10 +68,16 @@ $grey: #dcddd8;
 	background:url('/assets/heart_loved.png') no-repeat;
 	width: 23px;
 	padding:0px;
-	margin:0px;
 	border:none;
+	margin: 10px 20px 10px 0;
+	float:right;
 }
 
 .heart_red input[type="submit"]:hover {
 	background:url('/assets/heart_hover.png') no-repeat;
+}
+
+.heart_out {
+	margin: 10px 20px 10px 0;
+	float:right;
 }
