@@ -1,6 +1,6 @@
 .userinfo.left
-	.useravatar.left= image_tag @user.avatar.thumb
-	%h4= @user.name
+	.useravatar.left= link_to image_tag(@user.avatar.thumb), @user
+	%h4= link_to @user.name, @user
 	%p= "Joined #{@user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y")}"
 .userextras.left
 	= link_to user_path(@user) do 

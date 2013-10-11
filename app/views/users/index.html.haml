@@ -1,2 +1,13 @@
-%h1 Users#index
-%p Find me in app/views/users/index.html.haml
+%h1 Find Your Friends
+= form_for @search, :url => users_path, :html => {:method => :get} do |f|
+	= f.text_field :name_or_email_contains, :placeholder => "Search By Username or Email"
+	%br
+	= f.submit "Search"
+.listitemborder
+-if !@users.nil?
+	-@users.each do |user|
+		-@user = user
+		- @my_favorite_posts = user.favorites.map {|favorite| Post.find(favorite.post_id)}
+		.userlistarea
+			= render "userbar"
+		.listitemborder

@@ -6,6 +6,14 @@ class UsersController < ApplicationController
   end
 
   def index
+    @search = User.search(params[:search])
+    if current_user.admin == true
+      @users = @search.all
+    end
+    if params[:search]      
+      @users = @search.all
+    end
+
   end
 
   def following

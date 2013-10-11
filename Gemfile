@@ -20,6 +20,7 @@ gem 'acts-as-taggable-on'
 gem 'will_paginate', '~> 3.0'
 gem "friendly_id", "~> 4.0.10"
 gem 'rmagick', '2.13.2'
+gem "meta_search" 
 
 group :production do
   gem 'pg', '0.12.2'
