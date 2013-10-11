@@ -2,4 +2,4 @@
 = form_for current_user.favorites.build(:post_id => @post.id), :remote => true do |f|
 	= f.hidden_field :post_id, value: @post.id
 	.actions
-		= f.submit "Favorite"
+		.heart= f.submit ""

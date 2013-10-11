@@ -1,4 +1,4 @@
 - @post = post
 = form_for current_user.favorites.find_by_post_id(@post.id), :html => { :method => :delete }, :remote => true do |f|
 	.actions
-		= f.submit "Unfavorite"
+		.heart_red= f.submit ""

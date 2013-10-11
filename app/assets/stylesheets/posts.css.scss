@@ -5,7 +5,7 @@
 $grey: #dcddd8;
 
 .post_media {
-	//display:none;
+	display:none;
 }
 
 .listitemborderposts {
@@ -22,11 +22,50 @@ $grey: #dcddd8;
 .left {
 	float:left;
 }
+.right{
+	float:right;	
+}
 
 .basic_data {
-	width:80%;
+	width:70%;
 }
 
 .social_data {
 	width:15%;
+}
+
+.post_thumbnail {
+	width:50px;
+	height:50px;
+	background: $grey;
+	margin: 5px 10px 0 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow:hidden;
+	border: 1px #BBBBBB solid;
+}
+
+.heart input[type="submit"] {
+	background:url('/assets/heart_grey.png') no-repeat;
+	width: 23px;
+	padding:0px;
+	margin:0px;
+	border:none;
+}
+
+.heart input[type="submit"]:hover {
+	background:url('/assets/heart_hover.png') no-repeat;
+}
+
+.heart_red input[type="submit"] {
+	background:url('/assets/heart_loved.png') no-repeat;
+	width: 23px;
+	padding:0px;
+	margin:0px;
+	border:none;
+}
+
+.heart_red input[type="submit"]:hover {
+	background:url('/assets/heart_hover.png') no-repeat;
 }

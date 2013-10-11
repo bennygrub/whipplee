@@ -1,4 +1,6 @@
 .post_metadata{class: post.id }
+	.post_thumbnail.left
+		= render "posts/thumbnail", post: post
 	.basic_data.left
 		%h4= link_to post.title, post
 		%p
@@ -13,5 +15,6 @@
 		= render "posts/favorite_on_list_form", post: post
 	.clear
 	%p
-	%button.show_hide{data: {post: post.id} }
+	%button.right.show_hide{data: {post: post.id} }
 		Show/Hide >>
+	.clear

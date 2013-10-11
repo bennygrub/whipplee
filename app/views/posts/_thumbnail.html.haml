@@ -1,0 +1,10 @@
+- if !post.video.blank? || !post.vembed.blank?
+	=image_tag "video_icon.png"
+- elsif !post.content.blank?
+	=image_tag "text_icon.png"
+- elsif !post.image.blank?
+	=image_tag "image_icon.png"
+- elsif !post.audio.blank?
+	=image_tag "audio_icon.png"
+- else !post.audio.blank?
+	=image_tag "generic"
