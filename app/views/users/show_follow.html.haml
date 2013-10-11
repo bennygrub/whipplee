@@ -14,3 +14,5 @@
 			- @my_favorite_posts = follower.favorites.map {|favorite| Post.find(favorite.post_id)}
 			- @user = follower
 			= render "userbar"
+-else
+	%h1 Nir sucks
