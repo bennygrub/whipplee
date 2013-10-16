@@ -6,3 +6,6 @@ $(document).ready ->
 	$('.show_hide').click ->
 		post = $(this).data("post")
 		$(".post_media[data-post=#{post}]").slideToggle(1000);
+	$('.drop').click ->
+		post = $(this).data("post")
+		$(".post_media[data-post=#{post}]").slideToggle(1000);

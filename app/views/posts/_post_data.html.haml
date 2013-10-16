@@ -1,8 +1,8 @@
 .post_metadata{class: post.id }
 	.post_thumbnail.rounded.left
-		= render "posts/thumbnail", post: post
+		= link_to render("posts/thumbnail", post: post), post
 	.basic_data.left
-		%h4= link_to post.title, post
+		%h4.drop{data: {post: post.id} }= link_to post.title, 'javascript:'
 		%p
 			By 
 			%b=post.creator_list
