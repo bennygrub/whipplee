@@ -17,12 +17,12 @@ Whipplee::Application.routes.draw do
   get "pages/contact"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
-  resources :users, :only => [:show, :index] do
+  resources :users, :only => [:index]
+  resources :users, path: "", :only => [:show] do
     member do
       get :following, :followers, :feed
     end
   end
-
 
   resources :relationships, :only => [:create, :destroy]
   resources :favorites, :only => [:create, :destroy]

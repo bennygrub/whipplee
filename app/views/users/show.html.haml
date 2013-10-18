@@ -1,5 +1,5 @@
 #topbox
 	= render "userbar"
-%h3= "#{@user.name} Favorites"
+%h3= "#{@user.name}'s Favorites"
 - @my_favorite_posts.each do |post|
 	= render 'posts/post_list', post: post
