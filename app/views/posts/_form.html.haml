@@ -1,25 +1,28 @@
 = simple_form_for(@post) do |f|
-  = f.error_notification
+    = f.error_notification
 
-  .form-inputs
-    = f.input :title, :placeholder => "Catchy Title for the Feed"
-    = f.input :teaser, :placeholder => "Add a Irresistable Teaser for the Feed"
-    = f.input :direct, :placeholder => "URL directly to blog post (include http)"
-    %h4 Only Add One Type of Content - Video, Content or Image
-    %h5 Video
-    = f.input :video, :placeholder => "The URL of the Actual Video if Youtube or Vimeo"
-    = f.input :vembed, :placeholder => "Video Iframe Embed Code (h=600 w=400)"
-    %h5 Written Content
-    = f.input :content, :placeholder => "Only Use for Written Humor"
-    %h5 Image
-    = image_tag(@post.image_url) if @post.image?
-    = f.file_field :image
-    = f.hidden_field :image_cache
+    .form-inputs
+        = f.input :title, :placeholder => "Catchy Title for the Feed"
+        = f.input :teaser, :placeholder => "Add a Irresistable Teaser for the Feed"
+        = f.input :direct, label: "Enter the URL of the Funny", :placeholder => "include the http"
+    * Select The Type of Media
+    %br 
+    .media_select= f.select :filter_list, @media, :prompt => "Select Media"
+    #dynamic_form
+        .form_video
+            %h5 Video
+            = f.input :vembed, :placeholder => "Video Iframe Embed Code (h=600 w=400)"
+        .form_written
+            %h5 Written Content
+            = f.input :content, :placeholder => "Only Use for Written Humor"
+        .form_image
+            %h5 Image
+            = image_tag(@post.image_url) if @post.image?
+            = f.file_field :image
+            = f.hidden_field :image_cache
     %h4 Now, Tag the Content to Make it Useful
-    = f.input :filter_list, :placeholder => "Tags for Filtering (comma seperated)"
-    = f.input :type_list, :placeholder => "General Tags (comma seperated)"
-    = f.input :site_list, :placeholder => "Top Level URL of the Blog the Piece is From"
-    = f.input :creator_list, :placeholder => "The Actual Creators (i.e. Tim and Eric)"
-
-  .form-actions
-    = f.button :submit
+    = f.input :site_list, label: "Top Level URL", :placeholder => "i.e. wwww.youtube.com"
+    = f.input :creator_list, label: "Tag the Creators", :placeholder => "i.e. Tim & Eric or Jon Stewart"
+    = f.input :type_list, label: "Any Extra Tags",:placeholder => "General Tags (comma seperated)"
+    .form-actions
+        = f.button :submit

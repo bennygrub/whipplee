@@ -136,3 +136,7 @@ button.show_hide {
 button.show_hide:hover {
 	background:$grey;
 }
+
+.form_video, .form_written, .form_image {
+	display:none;
+}

@@ -36,6 +36,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @media = [["Video", "video"], ["Image", 'image'], ["Written", 'written'], ["Audio", "audio"]]
 
     respond_to do |format|
       format.html # new.html.erb

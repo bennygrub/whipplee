@@ -9,3 +9,9 @@ $(document).ready ->
 	$('.drop').click ->
 		post = $(this).data("post")
 		$(".post_media[data-post=#{post}]").slideToggle(1000);
+
+$ ->
+	$("#post_filter_list").change ->
+		val = $(this).val()
+		$('.form_video, .form_written, .form_image').hide()
+		$('.form_'+val).show(800)
