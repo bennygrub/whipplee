@@ -6,6 +6,25 @@ body { padding-top: 60px;}
 $bottomgreygradient: rgb(236, 236, 236);
 $grey: #DCDDD8;
 
+body {
+	font-family: helevetica, arial;
+}
+p {
+	font-family: georgia, helevetica, arial;	
+}
+
+h3 {
+	font-family: 'Fjalla One', sans-serif;
+}
+
+h4 {
+	font-family: 'Oswald', sans-serif;
+	font-weight:300;
+}
+
+ul.nav {
+	font-family: 'Fjalla One', sans-serif;			
+}
 
 ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;
