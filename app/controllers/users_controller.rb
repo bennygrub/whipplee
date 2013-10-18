@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
-    @favorites = @user.favorites
+    @favorites = @user.favorites.order("created_at DESC")
     @my_favorite_posts = @favorites.map {|favorite| Post.find(favorite.post_id)}
   end
 
