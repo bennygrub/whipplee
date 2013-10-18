@@ -23,6 +23,9 @@
            <div class="row">
             <div class="span9">
               <%= render 'layouts/messages' %>
+              <% unless current_user%>
+                <%= render 'layouts/welcome_agenda'%>
+              <% end %>
               <%= yield %>
             </div>
             <div class="span3" style="background-color:#FAFAFA;height:800px;text-align:center;">
