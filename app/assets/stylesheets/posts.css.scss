@@ -55,10 +55,11 @@ $grey: #dcddd8;
 
 .heart input[type="submit"] {
 	background:url('/assets/heart_grey.png') no-repeat;
-	width: 23px;
+	width: 35px;
+	height: 35px;
 	padding:0px;
 	border:none;
-	margin: 10px 20px 10px 0;
+	margin: 10px 12px 10px 0;
 	float:right;
 }
 
@@ -68,10 +69,11 @@ $grey: #dcddd8;
 
 .heart_red input[type="submit"] {
 	background:url('/assets/heart_loved.png') no-repeat;
-	width: 23px;
+	width: 35px;
+	height: 35px;
 	padding:0px;
 	border:none;
-	margin: 10px 20px 10px 0;
+	margin: 10px 12px 10px 0;
 	float:right;
 }
 
@@ -80,7 +82,7 @@ $grey: #dcddd8;
 }
 
 .heart_out {
-	margin: 10px 20px 10px 0;
+	margin: 10px 12px 10px 0;
 	float:right;
 }
 .follow, .unfollow {
