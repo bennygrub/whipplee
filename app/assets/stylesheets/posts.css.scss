@@ -140,3 +140,22 @@ button.show_hide:hover {
 .form_video, .form_written, .form_image {
 	display:none;
 }
+
+
+input[type="text"] {
+	width:500px;
+	height:40px;
+	font-size: 16px;
+}
+
+textarea {
+	width:500px;
+	height:120px;
+}
+
+select {
+	height: 40px;
+	font-size: 16px;
+	background-color:#475F77;
+	color:white;
+}
