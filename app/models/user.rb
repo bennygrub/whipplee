@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  after_create :new_user_email
 
   def following?(followed)
     relationships.find_by_followed_id(followed)
@@ -39,6 +40,10 @@ class User < ActiveRecord::Base
   
   def friend_feed
     Post.from_users_followed_by(self)
+  end
+
+  def new_user_email
+    UserMailer.new_user_signup(self).deliver
   end
 
 end

@@ -1,4 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
+  
+  def create
+    super
+    UserMailer.welcome(@user).deliver
+  end
+
+
   def update
     # required for settings form to submit when password is left blank
     if params[:user][:password].blank?
