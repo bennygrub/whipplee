@@ -10,10 +10,10 @@
 	= link_to followers_user_path(@user) do
 		.infobox.left
 			.bold Followers
-			%p.followers= @user.followers.count
+			%p.followers{:data => {:user_id => @user.id}}= @user.followers.count
 	= link_to following_user_path(@user) do
 		.infobox.left
 			.bold Following
-			%p.following= @user.following.count
+			%p.following{:data => {:user_id => @user.id}}= @user.following.count
 	= render 'follow_form' if signed_in?
 .clear
