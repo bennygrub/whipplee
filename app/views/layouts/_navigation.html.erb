@@ -15,9 +15,9 @@
     <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href='#'>Popular <b class="caret"></b></a>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
       <li><%= link_to('Now', popular_posts_path)  %></li>
-      <li><%= link_to('Only Video', posts_path(:filter=>"video")) %></li>
-      <li><%= link_to('Only Images', posts_path(:filter=>"image")) %></li>
-      <li><%= link_to('Only Written Content', posts_path(:filter=>"written")) %></li>
+      <li><%= link_to('Only Video', popular_posts_path(:filter=>"video")) %></li>
+      <li><%= link_to('Only Images', popular_posts_path(:filter=>"image")) %></li>
+      <li><%= link_to('Only Written Content', popular_posts_path(:filter=>"written")) %></li>
     </ul>
   </li>
   <li class="divider-vertical"></li>

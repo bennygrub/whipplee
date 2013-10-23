@@ -96,13 +96,18 @@ class PostsController < ApplicationController
 
   def popular
     @posts = Post.where("created_at >= ?", 2.weeks.ago).order("favorite DESC")
-    #@posts = @posts.sort_by()
-    #@posts = Post.joins("LEFT OUTER JOIN Favorites ON favorites.post_id = posts.id AND posts.created_at >= DATETIME('now','-14 days')").group("posts.id").order("COUNT(favorites.id) DESC")
     @filter_type = "Comedy"
 
     if params[:filter]
-      @posts = @posts.tagged_with(params[:filter])
+      #@last_2weeks = Post.where("created_at >= ?", 5.weeks.ago).limit(20)
       @filter_type = params[:filter]
+      @post2 = Post.tagged_with(params[:filter]).order("favorite DESC")
+      @posts = @post2.map {|post| post if post.created_at >= 2.weeks.ago}
+      #@posts = @posts.map {|post| post if post.filter_list == [@filter_type]}
+
+      #@posts = Post.tagged_with(params[:filter]).order("favorite DESC")
+      #@posts = Post.where("created_at >= ?", 5.weeks.ago).order("favorite DESC")
+      #@posts_with_tag = @posts.map {|post|  } 
     end
     @posts = @posts.paginate(:page => params[:page], :per_page => 20)
   end
