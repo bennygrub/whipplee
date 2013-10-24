@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <%= render 'layouts/google_analytics' %>
   </head>
   <body>
     <header class="navbar navbar-fixed-top">
@@ -29,19 +30,7 @@
               <%= yield %>
             </div>
             <div class="span3" style="background-color:#FAFAFA;height:800px;text-align:center;">
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              <!-- hehemachine square -->
-              <ins class="adsbygoogle"
-                   style="display:inline-block;width:200px;height:200px"
-                   data-ad-client="ca-pub-0370939253760948"
-                   data-ad-slot="6375698846"></ins>
-
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-              <div class="fake_banner">
-                <%= image_tag 'onlineedu_banner.png' %>
-              </div>
+              <%= render 'layouts/ads' %>
             </div>
           </div>
           <footer>

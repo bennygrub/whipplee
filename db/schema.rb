@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131011151558) do
+ActiveRecord::Schema.define(:version => 20131024200346) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "user_id"
@@ -44,7 +44,10 @@ ActiveRecord::Schema.define(:version => 20131011151558) do
     t.string   "direct"
     t.text     "teaser"
     t.integer  "favorite",                  :default => 0
+    t.string   "slug"
   end
+
+  add_index "posts", ["slug"], :name => "index_posts_on_slug", :unique => true
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
