@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-    @media = [["Video", "video"], ["Image", 'image'], ["Written", 'written'], ["Audio", "audio"]]
+    @media = [["Video", "video"], ["Image", 'image'], ["Written", 'written'], ["Audio", "audio"], ["Twitter", "twitter"]]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
-    @media = [["Video", "video"], ["Image", 'image'], ["Written", 'written'], ["Audio", "audio"]]
+    @media = [["Video", "video"], ["Image", 'image'], ["Written", 'written'], ["Audio", "audio"], ["Twitter", "twitter"]]
   end
 
   # POST /posts

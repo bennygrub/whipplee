@@ -20,6 +20,14 @@
             = image_tag(@post.image_url) if @post.image?
             = f.file_field :image
             = f.hidden_field :image_cache
+        .form_audio
+            %h5 Audio
+            = f.input :vembed, :placeholder => "For audio, use Youtube or Vimeo Iframe Embed Code (h=600 w=400 - roughly)"
+        .form_twitter
+            %h5 Twitter
+            = image_tag(@post.image_url) if @post.image?
+            = f.file_field :image
+            = f.hidden_field :image_cache
     %h4 Now, Tag the Content to Make it Useful
     = f.input :site_list, label: "Top Level URL", :placeholder => "i.e. wwww.youtube.com"
     = f.input :creator_list, label: "Tag the Creators", :placeholder => "i.e. Tim & Eric or Jon Stewart"

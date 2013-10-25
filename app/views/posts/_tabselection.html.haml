@@ -31,3 +31,9 @@
 	- else
 		%li	
 			= link_to "Audio", posts_path(:filter => "audio")
+	- if params[:filter] == "twitter"
+		%li.active
+			= link_to "Twitter", posts_path(:filter => "twitter")
+	- else
+		%li	
+			= link_to "Twitter", posts_path(:filter => "twitter")

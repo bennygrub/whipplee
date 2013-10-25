@@ -13,5 +13,5 @@ $(document).ready ->
 $ ->
 	$("#post_filter_list").change ->
 		val = $(this).val()
-		$('.form_video, .form_written, .form_image').hide()
+		$('.form_video, .form_written, .form_image, .form_twitter, .form_audio').hide()
 		$('.form_'+val).show(800)
