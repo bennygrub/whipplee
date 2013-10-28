@@ -1,11 +1,15 @@
 - if post
 	=render "posts/post_data", post: post
-	- if !post.video.blank? || !post.vembed.blank?
+	- if post.filter_list == ["video"]
 		= render 'posts/video', post: post
-	- elsif !post.content.blank?
+	- elsif post.filter_list == ["written"]
 		= render 'posts/content', post: post
-	- elsif !post.image.blank?
+	- elsif post.filter_list == ["image"]
 		= render 'posts/image', post: post
+	- elsif post.filter_list == ["twitter"]
+		= render 'posts/image', post: post
+	- elsif post.filter_list == ["audio"]
+		= render 'posts/video', post: post
 	%br
 	.listitemborderposts
 - else

@@ -1,10 +1,10 @@
-- if !post.video.blank? || !post.vembed.blank?
+- if post.filter_list == ["video"]
 	=image_tag "video_icon.png"
-- elsif !post.content.blank?
+- elsif post.filter_list == ["written"]
 	=image_tag "text_icon.png"
-- elsif !post.image.blank?
+- elsif post.filter_list == ["image"]
 	=image_tag "image_icon.png"
-- elsif !post.audio.blank?
-	=image_tag "audio_icon.png"
-- else !post.audio.blank?
-	=image_tag "generic"
+- elsif post.filter_list == ["audio"]
+	=image_tag "audio.png"
+- elsif post.filter_list == ["twitter"]
+	=image_tag "tweet.png"
