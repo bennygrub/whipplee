@@ -17,15 +17,15 @@
 	%p
 	.show_hide_wrapper
 		%button.rounded.show_hide{data: {post: post.id} }
-			- if post.filter_list == ["video"]
+			- if post.filter_list == ["video"] || ["Video"]
 				Watch Video
-			- elsif post.filter_list == ["written"]
+			- elsif post.filter_list == ["written"] || ["Written"]
 				Read More
-			- elsif post.filter_list == ["image"]
+			- elsif post.filter_list == ["image"] || ["Image"]
 				View Image
-			- elsif post.filter_list == ["twitter"]
+			- elsif post.filter_list == ["twitter"] || ["Twitter"]
 				View Tweet
-			- elsif post.filter_list == ["audio"]
+			- elsif post.filter_list == ["audio"] || ["Audio"]
 				Listen
 			- else
 				More
