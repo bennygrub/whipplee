@@ -1,14 +1,14 @@
 - if post
 	=render "posts/post_data", post: post
-	- if post.filter_list == ["video"]
+	- if post.filter_list == ["video"] || ["Video"]
 		= render 'posts/video', post: post
-	- elsif post.filter_list == ["written"]
+	- elsif post.filter_list == ["written"] || ["Written"]
 		= render 'posts/content', post: post
-	- elsif post.filter_list == ["image"]
+	- elsif post.filter_list == ["image"] || ["Image"]
 		= render 'posts/image', post: post
-	- elsif post.filter_list == ["twitter"]
+	- elsif post.filter_list == ["twitter"] || ["Twitter"]
 		= render 'posts/image', post: post
-	- elsif post.filter_list == ["audio"]
+	- elsif post.filter_list == ["audio"] || ["Audio"]
 		= render 'posts/video', post: post
 	%br
 	.listitemborderposts

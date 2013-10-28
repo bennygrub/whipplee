@@ -1,10 +1,10 @@
-- if post.filter_list == ["video"]
+- if post.filter_list == ["video"] || ["Video"]
 	=image_tag "video_icon.png"
-- elsif post.filter_list == ["written"]
+- elsif post.filter_list == ["written"] || ["Written"]
 	=image_tag "text_icon.png"
-- elsif post.filter_list == ["image"]
+- elsif post.filter_list == ["image"] || ["Image"]
 	=image_tag "image_icon.png"
-- elsif post.filter_list == ["audio"]
+- elsif post.filter_list == ["audio"] || ["Audio"]
 	=image_tag "audio.png"
-- elsif post.filter_list == ["twitter"]
+- elsif post.filter_list == ["twitter"] || ["Twitter"]
 	=image_tag "tweet.png"
