@@ -6,7 +6,7 @@
 		= render 'posts/content', post: post
 	- elsif post.filter_list == ["Image"]
 		= render 'posts/image', post: post
-	- elsif post.filter_list == ["Twitter"]
+	- elsif post.filter_list == ["twitter"]
 		= render 'posts/image', post: post
 	- elsif post.filter_list == ["Audio"]
 		= render 'posts/video', post: post
