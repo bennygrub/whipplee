@@ -21,6 +21,7 @@ gem 'will_paginate', '~> 3.0'
 gem "friendly_id", "~> 4.0.10"
 gem 'rmagick', '2.13.2'
 gem "meta_search" 
+gem "contextio"
 
 group :production do
   gem 'pg', '0.12.2'
